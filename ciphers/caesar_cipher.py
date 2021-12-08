@@ -237,3 +237,81 @@ if __name__ == "__main__":
         elif choice == "4":
             print("Goodbye.")
             break
+            
+            
+            
+            
+            
+ Decrypting ceaser cipher program in python:
+    def encypt_func(txt, s):  
+    result = ""  
+  
+  
+# transverse the plain txt  
+    for i in range(len(txt)):  
+        char = txt[i]  
+        # encypt_func uppercase characters in plain txt  
+  
+        if (char.isupper()):  
+            result += chr((ord(char) + s - 64) % 26 + 65)  
+        # encypt_func lowercase characters in plain txt  
+        else:  
+            result += chr((ord(char) + s - 96) % 26 + 97)  
+    return result  
+# check the above function  
+txt = "CEASER CIPHER EXAMPLE"  
+s = 4  
+  
+print("Plain txt : " + txt)  
+print("Shift pattern : " + str(s))  
+print("Cipher: " + encypt_func(txt, s))  
+
+Output:
+
+Plain txt : CEASER CIPHER EXAMPLE
+Shift pattern : 4
+    
+  
+
+
+ Hacking of Caesar Cipher Algorithm
+message = 'GIEWIVrGMTLIVrHIQS' #encrypted message
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+for key in range(len(LETTERS)):
+   translated = ''
+   for symbol in message:
+      if symbol in LETTERS:
+         num = LETTERS.find(symbol)
+         num = num - key
+         if num < 0:
+            num = num + len(LETTERS)
+         translated = translated + LETTERS[num]
+      else:
+         translated = translated + symbol
+print('Hacking key #%s: %s' % (key, translated))
+Cipher: HJFXJWsHNUMJWsJCFRUQJ
+    
+    
+    
+    
+ Another example:
+msg = 'rGMTLIVrHIQSGIEWIVGIEWIV' #encrypted msg  
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'  
+  
+for k in range(len(LETTERS)):  
+   transformation = ''  
+   for s in msg:  
+      if s in LETTERS:  
+         n = LETTERS.find(s)  
+         n = n - k  
+         if n < 0:  
+            n = n + len(LETTERS)  
+         transformation = transformation + LETTERS[n]  
+  
+      else:  
+         transformation = transformation + s  
+print('Hacking k #%s: %s' % (k, transformation))  
+Output:
+
+Hacking k #25: rHNUMJWrIJRTHJFXJWHJFXJW
